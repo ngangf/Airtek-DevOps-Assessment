@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: infraapi-service
+  namespace: infraapi
+spec:
+  selector:
+    app: infraapi
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

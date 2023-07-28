@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: infraweb-service
+  namespace: infraweb
+spec:
+  selector:
+    app: infraweb
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 5000

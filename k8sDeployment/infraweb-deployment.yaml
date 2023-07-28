@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: infraweb
+  name: infraweb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: infraweb
+  template:
+    metadata:
+      labels:
+        app: infraweb
+    spec:
+      containers:
+      - name: infraweb
+        image: foriben/infraweb
+        ports:
+        - containerPort: 5000
+        env:
+        - name: ApiAddress
+          value: http://infraapi-service.infraapi.svc.cluster.local:5000/WeatherForecast
+        resources:
+          requests:
+            cpu: "50m" 
+            memory: "64Mi"  
+          limits:
+            cpu: "100m"  
+            memory: "128Mi" 

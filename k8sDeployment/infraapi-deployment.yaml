@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: infraapi
+  name: infraapi-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: infraapi
+  template:
+    metadata:
+      labels:
+        app: infraapi
+    spec:
+      containers:
+      - name: infraapi
+        image: foriben/infraapi
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "100m"  
+            memory: "128Mi"  
+          limits:
+            cpu: "200m" 
+            memory: "256Mi" 
