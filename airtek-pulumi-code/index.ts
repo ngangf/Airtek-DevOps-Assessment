@@ -206,9 +206,9 @@ const nodeGroup = new aws.eks.NodeGroup("eksNodeGroup", {
     subnetIds: [privateSubnet1.id, privateSubnet2.id],
     instanceTypes: ["t2.micro"], 
     scalingConfig: {
-        desiredSize: 3, 
-        maxSize: 5, 
-        minSize: 3, 
+        desiredSize: 6, 
+        maxSize: 10, 
+        minSize: 4, 
     },
 });
 
