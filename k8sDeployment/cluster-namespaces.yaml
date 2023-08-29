@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: infraapi
+  labels:
+    name: infraapi
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: infraweb
+  labels:
+    name: infraweb
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx-ingress
+  labels:
+    name: nginx-ingress
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cert-manager
+  labels:
+    name: cert-manager
